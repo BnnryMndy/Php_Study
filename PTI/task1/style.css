@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    /* background-color: aqua; */
+}
+
+form {
+    padding: 5px;
+    background-color: rgb(199, 199, 199);
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+h1 {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #e4e4e4;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #b3b3b3;
+}
+
+table {
+    width: 50%;
+    margin: auto;
+    /* text-align: start; */
+    /* margin-top: 10px; */
+    /* background-color: #5e5e5e; */
+}
