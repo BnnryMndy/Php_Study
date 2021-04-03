@@ -11,40 +11,15 @@
     <title>Я уже смешарик</title>
 </head>
 
-<body style="background-color:#fa983a">
-    <div class="my-container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
-                <div class="row">
-                    <div class="col text-center">
-                        <h1>Регистрация</h1>
-                        <p class="text-h3">Для просмотра супер-дупер контента зарегистрируйтесь или войдите.</p>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col mt-4">
-                        <input type="text" class="form-control" placeholder="Логин">
-                    </div>
-                </div>
-                <div class="row align-items-center mt-4">
-                    <div class="col">
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                </div>
-                <div class="row align-items-center mt-4">
-                    <div class="col">
-                        <input type="password" class="form-control" placeholder="Пароль">
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-around mt-4">
-                    <div class="col">
-                        <button class="btn btn-primary mt-4">Войти</button>
-                        <button type="button" class="btn btn-link mt-4">в первый раз?</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
+    <form action="news.php" method="post">
+        <span>Введите логин:</span>
+        <input type="text" name="login" placeholder="Логин">
+        <span>Введите пароль:</span>
+        <input type="password" name="password">
+
+        <input type="submit" value="Войти">
+    </form>
 </body>
 
 </html>
