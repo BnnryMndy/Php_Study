@@ -10,15 +10,15 @@
     <?php require "php_blocks/db_auth.php"?>
     <?php
 
-
+        //* get _POST data
         $login = $_POST['login'];
         $passwrd = $_POST['password'];
 
-        echo 'login: '.$login;
-        echo 'password: '.$passwrd;
-
+        //* try found similar logins
         $result = $mysqli->query("SELECT COUNT(*) FROM `users` WHERE lower(`Login`) = lower('$login')");
         $row = $result->fetch_assoc();
+        
+        //* if similar logins not found, insert login and password, else display error message
         if(0 == $row['COUNT(*)']){
             $result = $mysqli->query("INSERT INTO `users`(`Login`, `Password`) VALUES ('$login','$passwrd')");
             require "php_blocks/success.php";
