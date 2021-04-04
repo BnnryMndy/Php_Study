@@ -12,14 +12,14 @@
 
 <body class="text-center">
     <main class="form-signin"> 
-        <form action="news.php" method="post">
+        <form action="thanks_for_registration.php" method="POST">
             <h1 class="h3 mb-3 mt-3 fw-normal">Регистрация</h1>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Логин">
+                <input name="login" type="text" class="form-control" id="floatingInput" placeholder="Логин">
                 <label for="floatingInput">Логин</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+                <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
                 <label for="floatingPassword">Пароль</label>
             </div>
             <div class="form-floating">
