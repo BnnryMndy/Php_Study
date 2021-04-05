@@ -14,13 +14,14 @@
 <body class="text-center">
     <main class="form-signin"> 
         <form action="news.php" method="post">
+
             <h1 class="h3 mb-3 mt-3 fw-normal">Я уже маслёнок</h1>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Логин">
+                <input name="login" type="text" class="form-control" id="floatingInput" placeholder="Логин">
                 <label for="floatingInput">Логин</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+                <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
                 <label for="floatingPassword">Пароль</label>
             </div>
 
@@ -32,3 +33,18 @@
 </body>
 
 </html>
+
+<?php
+    $login = $_POST['login'];
+    $passwrd = $_POST['password'];
+
+    //* try found similar logins
+    $result = $mysqli->query("SELECT COUNT(*) FROM `users` WHERE lower(`Login`) = lower('$login') and `Password` = '$passwrd' ");
+    $row = $result->fetch_assoc();
+    
+    //* if similar logins not found, insert login and password, else display error message
+    if(0 < $row['COUNT(*)']){
+        setcookie('Login',$login);
+        header("Location: ./news.php");
+    }
+?>

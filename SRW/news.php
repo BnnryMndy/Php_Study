@@ -12,6 +12,23 @@
     <?php require "php_blocks/db_auth.php"?>
 
     <?php
+        $login = $_POST['login'];
+        $passwrd = $_POST['password'];
+ 
+        $result = $mysqli->query("SELECT COUNT(*) FROM `users` WHERE lower(`Login`) = lower('$login') and `Password` = '$passwrd' ");
+        $row = $result->fetch_assoc();
+        if(1 == $row['COUNT(*)']){
+            setcookie('Login', $login);
+        }
+        else{
+            header("Location: http://localhost/Php_Study-1/SRW/login.php");
+        }
+    ?>
+
+    <?php require "php_blocks/message_form.php"?>
+    <?php require "php_blocks/message_send.php"?>
+
+    <?php
         $result = $mysqli->query('')
     ?>
     <?php while( $row = $result->fetch_assoc()):?>
