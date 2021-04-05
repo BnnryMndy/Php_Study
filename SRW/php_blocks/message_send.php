@@ -1,10 +1,8 @@
 <?php
-    $login = $_COOKIE['login'];
+    $login = $_COOKIE['Login'];
     $message = $_POST['message'];
 
-    if(!empty($message)){
-        $result = $mysqli->query("INSERT INTO `messages`(`Login`, `message_text`, `sended_time`) VALUES ('$login','$message',CURDATE())");  
+    if(strlen($message) > 0){
+        $result = $mysqli->query("INSERT INTO messages (Login, message_text, sended_time) VALUES ('$login','$message',CURDATE())");
     }
-
-
 ?>
