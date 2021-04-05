@@ -33,18 +33,3 @@
 </body>
 
 </html>
-
-<?php
-    $login = $_POST['login'];
-    $passwrd = $_POST['password'];
-
-    //* try found similar logins
-    $result = $mysqli->query("SELECT COUNT(*) FROM `users` WHERE lower(`Login`) = lower('$login') and `Password` = '$passwrd' ");
-    $row = $result->fetch_assoc();
-    
-    //* if similar logins not found, insert login and password, else display error message
-    if(0 < $row['COUNT(*)']){
-        setcookie('Login',$login);
-        header("Location: ./news.php");
-    }
-?>

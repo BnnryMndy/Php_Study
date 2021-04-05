@@ -28,15 +28,17 @@
         }
     ?>
 
-    <?php require "php_blocks/message_form.php"?>
-    <?php require "php_blocks/message_send.php"?>
+    <div class="container">
+        <?php require "php_blocks/message_form.php"?>
+        <?php require "php_blocks/message_send.php"?>
 
-    <?php
-        $result = $mysqli->query("SELECT * FROM `messages`")
-    ?>
-    <?php while( $row = $result->fetch_assoc()):?>
-        <?php require "php_blocks/message.php"?>
-    <?php endwhile; ?>
+        <?php
+            $result = $mysqli->query("SELECT * FROM `messages`")
+        ?>
+        <?php while( $row = $result->fetch_assoc()):?>
+            <?php require "php_blocks/message.php"?>
+        <?php endwhile; ?>
+    </div>
 </body>
 
 </html>
