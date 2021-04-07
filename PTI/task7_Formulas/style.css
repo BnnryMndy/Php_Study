@@ -6,11 +6,11 @@
 
 form {
     padding: 5px;
+    width: 300px;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    justify-content: end;
     background-color: rgb(199, 199, 199);
-}
-
-input[type="number"] {
-    width: 100px;
 }
 
 h1 {
@@ -35,3 +35,12 @@ table {
     /* margin-top: 10px; */
     /* background-color: #5e5e5e; */
 }
+
+
+/* input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100px;
+    height: 12pt;
+} */

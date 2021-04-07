@@ -17,9 +17,12 @@
             <br><span>b = </span><input type="number" name="b" id="" value="<?php echo $_GET["b"]?>">
             <br><span>c = </span><input type="number" name="c" id="" value="<?php echo $_GET["c"]?>">
             
-            <br><input type="radio" name="formulas" value="y=ax^2+bx+c">y = ax^2+bx+c
-            <br><input type="radio" name="formulas" value="y=a*sin(bx)+c">y = a*sin(bx)+c
-            <br><input type="radio" name="formulas" value="y=a*x+b">y = a*x+b
+            <br><input name="formulas" list="formulas" value="<?php echo $_GET['formulas']?>">
+            <datalist id="formulas">
+                <option label="parabola" value="y=ax^2+bx+c">
+                <option label="sinusuicidal" value="y=a*sin(bx)+c">
+                <option label="linelical" value="y=a*x+b">
+            </datalist>
             
             <br>
             <input type="submit" value="let's go!">
