@@ -9,6 +9,7 @@
 
 input {
     float: right;
+    margin: 0px;
     background-color: #3d4346;
     border: none;
     color: white;
@@ -54,4 +55,8 @@ body {
     margin: auto;
     margin-top: 30px;
     text-align: center;
+}
+
+span {
+    margin: 7px;
 }

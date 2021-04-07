@@ -23,12 +23,12 @@
             
             <span>Вашу: </span>
             <input required id="from_currience" name="from_currience" list="list_currience" value="<?php echo $_GET['from_currience']?>">
-            <br><br><span>Назначения: </span>
+            <br><br><br><span>Назначения: </span>
             <input required id="to_currience" name="to_currience" list="list_currience" value="<?php echo $_GET['to_currience']?>">
-            <br><br>
+            <br><br><br>
             <span>Введите сумму: </span>
             <input required id="value_to_convert" type="number" name="value_to_convert" id="" value="<?php echo $_GET['value_to_convert']?>">
-            <br><br>
+            <br><br><br>
             <input type="submit" value="Рассчитать">
         </form>
 
