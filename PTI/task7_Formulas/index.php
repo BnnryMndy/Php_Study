@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <title>P H P раз</title>
 </head>
 <body>
@@ -13,11 +15,11 @@
     <div class="container">
         
         <form action="index.php" method="get" >
-            <span>a = </span><input type="number" name="a" id="" value="<?php echo $_GET["a"]?>">
-            <br><span>b = </span><input type="number" name="b" id="" value="<?php echo $_GET["b"]?>">
-            <br><span>c = </span><input type="number" name="c" id="" value="<?php echo $_GET["c"]?>">
+            <span>a = </span><input type="number" name="a" id="a" value="<?php echo $_GET["a"]?>">
+            <br><span>b = </span><input type="number" name="b" id="b" value="<?php echo $_GET["b"]?>">
+            <br><span>c = </span><input type="number" name="c" id="c" value="<?php echo $_GET["c"]?>">
             
-            <br><input name="formulas" list="formulas" value="<?php echo $_GET['formulas']?>">
+            <br><input id="formula" name="formulas" list="formulas" value="<?php echo $_GET['formulas']?>">
             <datalist id="formulas">
                 <option label="parabola" value="y=ax^2+bx+c">
                 <option label="sinusuicidal" value="y=a*sin(bx)+c">
@@ -37,7 +39,7 @@
             
             <?php
                 function quadro($a, $b, $c, $x){
-                    $result = $a*$a*$x + $b*$x + $c;
+                    $result = $a*$x*$x + $b*$x + $c;
                     return $result;
                 }
 
@@ -68,13 +70,55 @@
                     if( $_GET['formulas'] == 'y=a*x+b'){
                         $res =linx($a, $b, $c, $i);
                     }
+                    $id_increment = ($i + 3) * 2;
                     echo "<tr>
                     <th>$i</th>
-                    <th>$res</th>
+                    <th id = '$id_increment'>$res</th>
                 </tr>";
                 }
             ?>
         </table>
+        <div id="graph"></div>
     </div>
+    <footer> Лазарев Антон, гр.3012</footer>
 </body>
+
+<script>
+    TESTER = document.getElementById('graph');
+
+    var y_table = [];
+
+    for (var incriment = 0; incriment < 13; incriment++){
+        var y_from_page = document.getElementById(incriment).textContent;
+        y_table.push(Number(y_from_page));
+        // console.log(y_from_page);
+    }
+
+    var trace1 = {
+        x: [-3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3],
+        y: y_table,
+        fill: 'tozeroy',
+        mode: 'lines'
+    };
+
+    var data = [trace1];
+
+    var layout = {
+        title: 'Супер Дупер График',
+        xaxis: {
+            showgrid: false,
+            showline: false,
+            showticklabels: false,
+            zeroline: false
+        },
+        yaxis: {
+            showgrid: false,
+            showline: false,
+            showticklabels: false,
+            zeroline: false
+        },
+        showlegend: false
+    };
+    Plotly.plot(TESTER, data, layout, {staticPlot: true});
+</script>
 </html>
