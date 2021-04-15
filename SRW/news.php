@@ -36,6 +36,7 @@
             $result = $mysqli->query("SELECT * FROM `messages` ORDER BY `message_id` DESC")
         ?>
         <?php while( $row = $result->fetch_assoc()):?>
+            
             <?php require "php_blocks/message.php"?>
         <?php endwhile; ?>        
     </div>

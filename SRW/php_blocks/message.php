@@ -4,5 +4,7 @@
             <p class="h2"><?php echo($row['message_text'])?></p>
             <footer class="blcokquote-footer text-muted"><?php echo($row['Login'])?> <cite title="Source Title" > said at <?php echo($row['sended_time'])?></cite></footer>
         </blockquote>
+
+        <?php echo ($like_row['count(*)'])?>
     </div>
 </div>

@@ -22,10 +22,15 @@
         if(0 == $row['COUNT(*)']){
             $result = $mysqli->query("INSERT INTO `users`(`Login`, `Password`) VALUES ('$login','$passwrd')");
             require "php_blocks/success.php";
+            setcookie('Login', $login, mktime(). time()+60*60*24*30);
+            header("Location: http://localhost/Php_Study-1/SRW/news.php");
+
         }
         else{
             require "php_blocks/failed.php";
+            header("Location: http://localhost/Php_Study-1/SRW/registration.php");
         }
+        
     ?>    
 </body>
 </html>
