@@ -12,6 +12,11 @@
 </head>
 
 <body class="text-center">
+    <?
+        if(isset($_COOKIE['Login'])){
+            header("Location: http://localhost/Php_Study-1/SRW/news.php");
+        }
+    ?>
     <main class="form-signin"> 
         <form action="news.php" method="post">
 

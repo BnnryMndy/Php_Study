@@ -6,5 +6,15 @@
         $result = $mysqli->query("INSERT INTO messages (Login, message_text, sended_time) VALUES ('$login','$message',NOW())");  
     }
     unset($_POST);
-    unset($message);
+    $message = "";
+    if($_GET['message']=='sended')
+    {
+
+    }
+    else{
+        header("Location: http://localhost/Php_Study-1/SRW/news.php?message=sended");
+        exit();
+    }
+    
+    
 ?>

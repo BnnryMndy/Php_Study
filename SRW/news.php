@@ -11,7 +11,7 @@
 
 <body>
     <?php require "php_blocks/db_auth.php"?>
-    <?php require "php_blocks/message_form.php"?>
+    
     <?php
         $login = $_POST['login'];
         $passwrd = $_POST['password'];
@@ -28,9 +28,9 @@
         }
     ?>
 
-    <div class="container">
-        
-        <?php require "php_blocks/message_send.php"?>
+    <div class="container bg-light">
+        <?require "php_blocks/header.php"?>
+        <?php require "php_blocks/message_form.php"?>
 
         <?php
             $result = $mysqli->query("SELECT * FROM `messages` ORDER BY `message_id` DESC")
@@ -39,6 +39,8 @@
             <?php require "php_blocks/message.php"?>
         <?php endwhile; ?>        
     </div>
+    
+    <?php require "php_blocks/message_send.php"?>
 </body>
 
 </html>

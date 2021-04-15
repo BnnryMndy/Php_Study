@@ -18,13 +18,13 @@
                 <input name="login" type="text" class="form-control" id="floatingInput" placeholder="Логин">
                 <label for="floatingInput">Логин</label>
             </div>
-            <div class="form-floating">
+            <!-- <div class="form-floating">
                 <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
                 <label for="floatingPassword">Пароль</label>
-            </div>
+            </div> -->
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingSecPassword" placeholder="Повторите пароль">
-                <label for="floatingPassword">Повторите пароль</label>
+                <input name="password" type="password" class="form-control" id="floatingSecPassword" placeholder="пароль">
+                <label for="floatingPassword">пароль</label>
             </div>
 
             <button class="w-100 btn btn-lg btn-primary" type="submit">Зарегистрироваться</button>
