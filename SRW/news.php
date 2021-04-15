@@ -11,7 +11,7 @@
 
 <body>
     <?php require "php_blocks/db_auth.php"?>
-
+    <?php require "php_blocks/message_form.php"?>
     <?php
         $login = $_POST['login'];
         $passwrd = $_POST['password'];
@@ -29,7 +29,7 @@
     ?>
 
     <div class="container">
-        <?php require "php_blocks/message_form.php"?>
+        
         <?php require "php_blocks/message_send.php"?>
 
         <?php
@@ -37,7 +37,7 @@
         ?>
         <?php while( $row = $result->fetch_assoc()):?>
             <?php require "php_blocks/message.php"?>
-        <?php endwhile; ?>
+        <?php endwhile; ?>        
     </div>
 </body>
 

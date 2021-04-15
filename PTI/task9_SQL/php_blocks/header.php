@@ -1,10 +1,10 @@
-    <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
+<nav class="navbar navbar-light bg-light p-2">
+    <span class="navbar-brand mb-0 h1">BestRanobe.ru</span>
     
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" list="sortby" placeholder="по умолчанию" aria-label="Search">
+    <form class="form-inline " action="index.php" method="POST">
+        <input name="sortby" class=" mr-sm-2" list="sortby" value="<? echo($_POST['sortby'])?>" placeholder="по умолчанию" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Сортировать</button>
-        <datalist id="sortby">
+        <datalist id="sortby" >
             <option label="📈 Цена по возростанию" value="PriceUp">
             <option label="📉 Цена по убыванию" value="PriceDown">
             <option label="🦔 по умолчанию" value="default">
