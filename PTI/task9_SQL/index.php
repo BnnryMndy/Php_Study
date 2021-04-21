@@ -22,8 +22,8 @@
             ];
 
             $sort = $sortDictionary[$_POST['sortby']];
-            if(!isset($sort)){
-                $sort = 'default';
+            if(strlen($_POST['sortby']) <= 1){
+                $sort = $sortDictionary['default'];
             }
             $result = $mysqli->query("SELECT * FROM books ORDER BY $sort");
         ?>
