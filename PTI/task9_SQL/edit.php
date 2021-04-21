@@ -28,6 +28,7 @@
                         <div class="input-group">
                             <input name="book_name" class="input--style-1"  label="название ранобэ" value="<? echo($row['title']);?>" type="text">
                         </div>
+                        <p class="text-muted">поддерживается html разметка</p>
                         <div class="input-group">
                             <textarea class="form-control"   name="book_description" id="" cols="30" rows="10"><? echo($row['description']);?></textarea>
                         </div>
