@@ -17,17 +17,19 @@
         $row = $result->fetch_assoc();
     ?>
     <div class="container">
-        <form action="update.php" method="post">
-            <input class="" label="название ранобэ" value="<? echo($row['title']);?>" type="text">
-            <input class="" label="Описание" value="<? echo($row['decription']);?>" type="text">
+        <form action="udpate.php" method="post">
+            <input hidden name="id" value="<? echo $id?>">
+            <input name="book_name"  label="название ранобэ" value="<? echo($row['title']);?>" type="text">
+            <textarea class="form-control"   name="book_description" id="" cols="30" rows="10"><? echo($row['description']);?></textarea>
+            <!-- <input name=""  label="Описание" value="" type="text"> -->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">&#8381;</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Цена" label="Цена" value="<? echo($row['price']);?>">
+                <input name="book_price" type="number" class="form-control" aria-label="Цена" label="Цена" value="<? echo($row['price']);?>">
             </div>
             
-            <input class="" label="Автор" value="<? echo($row['author']);?>" type="text">
+            <input name="book_author"  label="Автор" value="<? echo($row['author']);?>" type="text">
 
             <input type="submit" value="Обновить">
         </form>

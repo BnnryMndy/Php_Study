@@ -22,7 +22,9 @@
             ];
 
             $sort = $sortDictionary[$_POST['sortby']];
-            
+            if(!isset($sort)){
+                $sort = 'default';
+            }
             $result = $mysqli->query("SELECT * FROM books ORDER BY $sort");
         ?>
         <?php while( $row = $result->fetch_assoc()):?>
