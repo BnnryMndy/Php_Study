@@ -6,7 +6,6 @@
     <div class="card-body">
         <p class="card-text"><?php echo($row['description'])?></p>
         <p class="card-text"><small class="text-muted"><?php echo($row['price'])?> руб</small></p>
-
         <a href="edit.php?id=<? echo($row['book_id'])?>"> <small class="text-muted">edit</small></a>       
     </div>
     
