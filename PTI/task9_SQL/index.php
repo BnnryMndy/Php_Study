@@ -9,13 +9,6 @@
     <title>SQL task</title>
 </head>
 <body>
-    <?
-        //TODO:
-        // * сделать добавление книг
-        // * сделать удаление книг
-        // * сделать систему ролей (админ может добавлять/удалять/редактировать, манагер только редактировать)
-        
-    ?>
     <?php require "php_blocks/db_auth.php"?>
     <div class="container">
         <?php require "php_blocks/header.php"?>
