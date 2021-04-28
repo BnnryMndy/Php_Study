@@ -19,6 +19,7 @@
     <?php require "php_blocks/db_auth.php"?>
     <div class="container">
         <?php require "php_blocks/header.php"?>
+        <?php require "php_blocks/sort.php"?>
         <div class="card-group">
         <?php
             $sortDictionary = [

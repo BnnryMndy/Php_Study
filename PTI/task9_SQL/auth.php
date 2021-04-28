@@ -7,7 +7,7 @@
     $row = $result->fetch_assoc();
     if(1 == $row['COUNT(*)']){
         setcookie('Login', $login, mktime(). time()+60*60*24*30);
-        $result = $mysqli->query("SELECT role FROM `users` WHERE lower(`Login`) = lower('$login')");
+        $result = $mysqli->query("SELECT `role` FROM `users` WHERE lower(`Login`) = lower('$login')");
         $row = $result->fetch_assoc();
         setcookie('role', $row['role'], mktime(). time()+60*60*24*30);
         header("Location: index.php");

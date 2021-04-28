@@ -46,7 +46,11 @@
 
                         
                         
-
+                        <?
+                            if($_COOKIE['role'] == 'admin'){
+                                echo '<a href="delete.php?id='.$row["book_id"].'"> <small class="text-danger">удалить</small></a>';
+                            }
+                        ?>
                         <div class="p-t-20"></div>
                         <input class="btn btn--radius btn--green" type="submit" value="Обновить">
                     </form>
