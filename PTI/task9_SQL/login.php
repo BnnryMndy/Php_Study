@@ -31,8 +31,6 @@
             </div>
 
             <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
-
-            <a href="registration.php" class="mt-5 mb-3 already">Регистрация</a>
         </form>
     </main>
 </body>
